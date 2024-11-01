@@ -2,6 +2,7 @@
 name = "fastapitemplate"
 version = "0.1.0"
 description = ""
+package-mode = false
 authors = ["kirill <shkolenko02-03-2004@mail.ru>"]
 readme = "README.md"
 
@@ -13,12 +14,18 @@ loguru = "^0.7.0"
 pre-commit = "^3.7.0"
 asyncpg = "^0.29.0"
 transformers = {extras = ["torch"], version = "^4.46.1"}
+soundfile = "^0.12.1"
+llvmlite = "^0.43.0"
+numpy = "<2.0"
+parler-tts = {git = "https://github.com/huggingface/parler-tts.git"}
+torch = "^2.5.1"
 
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"
 ruff = "^0.3.7"
 pytest = "^8.3.3"
+ipywidgets = "^8.1.5"
 
 [build-system]
 requires = ["poetry-core"]
