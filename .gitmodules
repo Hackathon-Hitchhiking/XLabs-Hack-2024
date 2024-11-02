@@ -1,0 +1,12 @@
+[submodule "research/PromptSinger/dataset/tokenizer"]
+	path = research/PromptSinger/dataset/tokenizer
+	url = https://github.com/cyanbx/Prompt-Singer.git
+	branch = main
+[submodule "Prompt-Singer"]
+	path = Prompt-Singer
+	url = https://github.com/cyanbx/Prompt-Singer.git
+	branch = main
+[submodule "Singer"]
+	path = Singer
+	url = https://github.com/cyanbx/Prompt-Singer.git
+	branch = main
