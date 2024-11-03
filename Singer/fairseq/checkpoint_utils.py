@@ -762,6 +762,7 @@ def load_model_ensemble_and_task_from_hf_hub(
 
     _arg_overrides = arg_overrides or {}
     _arg_overrides["data"] = cache_dir
+    _arg_overrides["_name"] = "t2a_sing_t5_config_task"
     models, cfg, task = load_model_ensemble_and_task(
         [p.as_posix() for p in Path(cache_dir_pr).glob("*.pt")],
         arg_overrides=_arg_overrides,
