@@ -1,4 +1,0 @@
-[submodule "Singer"]
-	path = Singer
-	url = https://github.com/cyanbx/Prompt-Singer.git
-	branch = main
