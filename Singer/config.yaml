@@ -1,0 +1,10 @@
+word_dict: English_word.pkl
+sentence_dict: English_sen.pkl
+text_encoder_version: /Users/rebelraider/.cache/huggingface/hub/models--Cyanbox--Prompt-Singer/snapshots/4a9ad215081865e168df26ea4a54cc78e87378a6/flant5-large-finetuned/checkpoint-40000
+audio_tokenizer_ckpt_path: /Users/rebelraider/.cache/huggingface/hub/models--Cyanbox--Prompt-Singer/snapshots/4a9ad215081865e168df26ea4a54cc78e87378a6/codec/ckpt_01135000.pth
+prepend_bos_and_append_tgt_lang_tag: false
+dict_length: 3956
+batch_max_frames: 650
+multi: 1
+num_coarse_quantizers: 3
+max_dur: 200

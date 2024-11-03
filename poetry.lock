@@ -635,7 +635,7 @@ editdistance = "*"
 fairscale = "*"
 hydra-core = "1.2.0"
 iopath = "*"
-more-itertools = "*"
+more_itertools = "*"
 numpy = {version = "*", markers = "python_version >= \"3.7\""}
 omegaconf = "2.2.2"
 pyarrow = "*"
@@ -652,7 +652,7 @@ torch = "*"
 torchaudio = ">=0.8.0"
 tqdm = "*"
 transformers = "*"
-typing-extensions = "*"
+typing_extensions = "*"
 
 [package.extras]
 dev = ["flake8 (==3.9.2)", "ipdb", "ipython", "pre-commit", "pytest"]
@@ -2508,4 +2508,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "148e7f042e03b60567dc2774ac334d52d77138cb106e8baa4881ba5c8487885f"
+content-hash = "01695452bc618ed3e9e0b7ea8afe08903885788e5873d2186585a865a89f0d43"

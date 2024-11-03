@@ -45,7 +45,7 @@ We provide checkpoints for each stage of the finetuned flan-t5 large version mod
 
 ```python
 from huggingface_hub import snapshot_download 
-downloaded_path = snapshot_download(repo_id="Cyanbox/Singer")
+downloaded_path = snapshot_download(repo_id="Cyanbox/Prompt-Singer")
 ```
 This hugging face repo contains checkpoints of the SoundStream, the finetuned FLAN-T5, the transformer backbone and the unit vocoder.
 

@@ -51,6 +51,7 @@ class T2ASingT5DataConfig(object):
     def __init__(self, yaml_path: Path):
         self.config = get_config_from_yaml(yaml_path)
         self.root = os.path.dirname(yaml_path)
+        self.vocoder = {}
 
     def _auto_convert_to_abs_path(self, x):
         if isinstance(x, str):

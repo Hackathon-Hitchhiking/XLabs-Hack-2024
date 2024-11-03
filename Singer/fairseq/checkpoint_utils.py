@@ -756,21 +756,14 @@ def load_model_ensemble_and_task_from_hf_hub(
     cache_dir = snapshot_download(
         model_id, cache_dir=cache_dir, library_name=library_name, **kwargs
     )
-    cache_dir_pr = cache_dir + "/prompt-singer-flant5-large-finetuned/"
-    print(cache_dir_pr)
-    print([p.as_posix() for p in Path(cache_dir_pr).glob("*.pt")])
 
     _arg_overrides = arg_overrides or {}
     _arg_overrides["data"] = cache_dir
-    _arg_overrides["_name"] = "t2a_sing_t5_config_task"
     models, cfg, task = load_model_ensemble_and_task(
-        [p.as_posix() for p in Path(cache_dir_pr).glob("*.pt")],
+        [p.as_posix() for p in Path(cache_dir).glob("*.pt")],
         arg_overrides=_arg_overrides,
     )
-
-    print(cache_dir)
-
-    # cfg.task.config_yaml = f"{cache_dir}/{cfg.task.config_yaml}"
+    cfg.task.config_yaml = f"{cache_dir}/{cfg.task.config_yaml}"
     return models, cfg, task
 
 
