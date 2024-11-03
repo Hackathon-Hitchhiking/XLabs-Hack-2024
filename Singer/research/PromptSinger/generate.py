@@ -6,7 +6,6 @@
 """
 Translate pre-processed data with a trained model.
 """
-
 import ast
 import logging
 import math
