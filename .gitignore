@@ -12,3 +12,6 @@ env.bak/
 venv.bak/
 
 .docker/.env
+UniAudioRepo/UniAudio/checkpoints
+UniAudioRepo/UniAudio/output
+test-clean.tar.gz

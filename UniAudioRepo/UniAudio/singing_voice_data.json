@@ -1,0 +1,7 @@
+{
+    "task": "singing_voice",
+    "keys": {
+        "text_seq": "UniAudio/text_sequence.txt",
+        "instruction_seq": "UniAudio/instruction_sequence.txt"
+    }
+}

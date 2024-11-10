@@ -1,10 +1,42 @@
-word_dict: English_word.pkl
-sentence_dict: English_sen.pkl
-text_encoder_version: /Users/rebelraider/.cache/huggingface/hub/models--Cyanbox--Prompt-Singer/snapshots/4a9ad215081865e168df26ea4a54cc78e87378a6/flant5-large-finetuned/checkpoint-40000
-audio_tokenizer_ckpt_path: /Users/rebelraider/.cache/huggingface/hub/models--Cyanbox--Prompt-Singer/snapshots/4a9ad215081865e168df26ea4a54cc78e87378a6/codec/ckpt_01135000.pth
-prepend_bos_and_append_tgt_lang_tag: false
-dict_length: 3956
-batch_max_frames: 650
-multi: 1
-num_coarse_quantizers: 3
-max_dur: 200
+# VITS Model Configuration
+model:
+  type: "VITS"
+  text_embedding_dim: 512           # Dimension for phoneme and text embeddings
+  style_embedding_dim: 768           # Match BERT embedding size for style conditioning
+  hidden_channels: 192               # Hidden channels for intermediate layers
+  n_layers: 6                        # Number of layers in encoder and decoder
+  n_heads: 8                         # Attention heads for multi-head attention
+  dropout_rate: 0.1                  # Regularization to prevent overfitting
+  duration_predictor:                # Duration prediction for phoneme alignment
+    kernel_size: 3
+    layers: 2
+  pitch_predictor:                   # Optional for pitch conditioning (singing style)
+    kernel_size: 5
+    layers: 3
+    dropout: 0.1
+  attention_type: "monotonic"        # Monotonic attention for stable alignment in singing
+  max_text_len: 500                  # Max text length to accommodate longer lyrics
+
+# Data Paths
+data:
+  train_path: "dataset_root/audio_files"
+  val_path: "dataset_root/validation_files"
+  metadata_path: "dataset_root/metadata.csv"
+  sample_rate: 22050                 # Sample rate for Russian vocals, common for HiFi-GAN
+
+# Mel-Spectrogram Parameters
+mel:
+  n_mels: 80                         # Number of mel channels
+  hop_length: 256                    # Hop length, controls frame rate of mel spectrogram
+  win_length: 1024                   # Window size for STFT
+  fmin: 50                           # Minimum frequency for mel scale
+  fmax: 7600                         # Maximum frequency for mel scale
+
+# Optimization and Training
+train:
+  batch_size: 16                     # Adjust based on GPU memory
+  learning_rate: 0.0002
+  epochs: 100
+  grad_clip: 1.0                     # Gradient clipping for stable training
+  scheduler: "Noam"                  # Noam scheduler for learning rate warm-up and decay
+  warmup_steps: 4000                 # Steps for learning rate warm-up
